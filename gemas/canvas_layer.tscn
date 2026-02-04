@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cgkviok7o7brl"]
+
+[ext_resource type="Texture2D" uid="uid://fdcbhlvrdsbx" path="res://Asset/Rocky Roads/Objects/gem.png" id="1_h8ox6"]
+
+[node name="Gema" type="CanvasLayer" unique_id=2022754433]
+
+[node name="Control" type="Control" parent="." unique_id=1435928333]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -12.0
+offset_right = 40.0
+offset_bottom = 28.0
+
+[node name="Label" type="Label" parent="." unique_id=819828431]
+offset_left = 64.0
+offset_top = 43.0
+offset_right = 150.0
+offset_bottom = 147.0
+scale = Vector2(0.5972465, 0.5972465)
+theme_override_font_sizes/font_size = 75
+text = "00"
+
+[node name="Node2D" type="Node2D" parent="." unique_id=854534578]
+position = Vector2(87, -5)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=1828654727]
+position = Vector2(-58, 77)
+scale = Vector2(3.387969, 3.339257)
+texture = ExtResource("1_h8ox6")
+hframes = 5
