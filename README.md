@@ -2,6 +2,7 @@
 
 ## **1. Información General**
 Género: Plataformas 2D
+
 GitHub = https://github.com/Mikalemz 
 
 Itch.io = https://mikalemz.itch.io/ 
@@ -38,17 +39,29 @@ Huecos que obligan a saltar
 Plataformas elevadas
 ## **5. Controles**
 A / Flecha izquierda: Mover a la izquierda
+
 D / Flecha derecha: Mover a la derecha
+
 Espacio: Saltar
 ## **6. Interfaz **
 Vidas del jugador
+
 Barra de vida del boss 
+
 Pantalla de Game Over
+
 Pantalla de Victoria
+
 ## **7. Estilo Visual**
 Gráficos 2D
+
 Estilo simple / pixel art
+
 ## **8. Sonido**
 Música de fondo 
+
 Sonido al saltar
+
 Sonido al recibir daño
+
+
