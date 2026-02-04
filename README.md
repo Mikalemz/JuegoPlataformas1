@@ -43,7 +43,7 @@ A / Flecha izquierda: Mover a la izquierda
 D / Flecha derecha: Mover a la derecha
 
 Espacio: Saltar
-## **6. Interfaz **
+## **6. Interfaz**
 Vidas del jugador
 
 Barra de vida del boss 
