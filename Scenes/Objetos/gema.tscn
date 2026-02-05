@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cr2xsi7jc5c86"]
 
 [ext_resource type="Texture2D" uid="uid://fdcbhlvrdsbx" path="res://Asset/Rocky Roads/Objects/gem.png" id="1_k2a3l"]
-[ext_resource type="Script" uid="uid://b2rytt2ivmo2o" path="res://Scripts/gema.gd" id="1_u8e3g"]
+[ext_resource type="Script" uid="uid://b2rytt2ivmo2o" path="res://Scripts/gemas.gd" id="1_u8e3g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k2a3l"]
 radius = 7.071068
@@ -59,6 +59,7 @@ shape = SubResource("CircleShape2D_k2a3l")
 sprite_frames = SubResource("SpriteFrames_7ovrp")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.04244074
+frame = 4
+frame_progress = 0.5813657
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
