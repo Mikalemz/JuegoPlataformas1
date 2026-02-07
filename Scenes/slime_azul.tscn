@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://b838smorqaqmp"]
+
+[ext_resource type="Texture2D" uid="uid://dbad36ngcvtqf" path="res://Asset/Rocky Roads/Enemies/slime_blue.png" id="1_04kxg"]
+[ext_resource type="Script" uid="uid://ccifst48yae3m" path="res://Scripts/slime_azul.gd" id="1_nnljx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nnljx"]
+atlas = ExtResource("1_04kxg")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14aah"]
+atlas = ExtResource("1_04kxg")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8d36n"]
+atlas = ExtResource("1_04kxg")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hehsj"]
+atlas = ExtResource("1_04kxg")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v75u5"]
+atlas = ExtResource("1_04kxg")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qicsq"]
+atlas = ExtResource("1_04kxg")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jolx7"]
+atlas = ExtResource("1_04kxg")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mayjv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nnljx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14aah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8d36n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hehsj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v75u5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qicsq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jolx7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nh2p1"]
+size = Vector2(22, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_04kxg"]
+size = Vector2(24, 16)
+
+[node name="SlimeAzul" type="RigidBody2D" unique_id=101346397]
+script = ExtResource("1_nnljx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1753117455]
+scale = Vector2(1.375, 1.3125001)
+sprite_frames = SubResource("SpriteFrames_mayjv")
+autoplay = "default"
+frame_progress = 0.006404212
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1679261386]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_nh2p1")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=276791480]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1430012991]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_04kxg")
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

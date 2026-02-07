@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://bwyp65mq1um7j"]
+
+[ext_resource type="Script" uid="uid://lm67hovyx0i" path="res://Scripts/Destello.gd" id="1_ug8hw"]
+[ext_resource type="Texture2D" uid="uid://bxsf4vsjcup2w" path="res://Asset/Rocky Roads/FX/shine_white.png" id="2_ug8hw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtnth"]
+atlas = ExtResource("2_ug8hw")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y26aa"]
+atlas = ExtResource("2_ug8hw")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5fbj"]
+atlas = ExtResource("2_ug8hw")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7668"]
+atlas = ExtResource("2_ug8hw")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxir8"]
+atlas = ExtResource("2_ug8hw")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p7668"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtnth")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y26aa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5fbj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7668")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bxir8")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o7wem"]
+size = Vector2(7.1875, 6.4335938)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ug8hw"]
+size = Vector2(4.875, 3.125)
+
+[node name="Destello" type="Node2D" unique_id=504812421]
+script = ExtResource("1_ug8hw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=19725517]
+sprite_frames = SubResource("SpriteFrames_p7668")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.72280836
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=440696203]
+
+[node name="TopBee" type="CollisionShape2D" parent="Area2D" unique_id=371531235]
+position = Vector2(0.40625, 0.7832031)
+shape = SubResource("RectangleShape2D_o7wem")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=926125148]
+
+[node name="BottonBee" type="CollisionShape2D" parent="Area2D2" unique_id=63984454]
+position = Vector2(1, 8)
+shape = SubResource("RectangleShape2D_ug8hw")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]

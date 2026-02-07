@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://bykw0xfw5kfm3"]
+
+[ext_resource type="Texture2D" uid="uid://b3m305x0rgsu3" path="res://Asset/hld-camp-parallax_8f84.jpg" id="1_5pknu"]
+[ext_resource type="Script" uid="uid://dpahwxouvg7nu" path="res://Scripts/main_menu.gd" id="1_b7htb"]
+[ext_resource type="Texture2D" uid="uid://b66wadekqdo1o" path="res://Asset/cooltext501746336323621.png" id="2_b7htb"]
+
+[node name="MainMenu" type="Node" unique_id=813505704]
+script = ExtResource("1_b7htb")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=301161286]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -384.0
+offset_top = -104.0
+offset_right = 384.0
+offset_bottom = 104.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_5pknu")
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=304900714]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -549.0
+offset_top = -253.0
+offset_right = -30.0
+offset_bottom = -61.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_b7htb")
+
+[node name="lvl1" type="Button" parent="." unique_id=985456267]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -487.0
+offset_top = -35.0
+offset_right = -303.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Nivel 1"
+
+[node name="lvl2" type="Button" parent="." unique_id=1918100131]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -485.0
+offset_top = 81.0
+offset_right = -301.0
+offset_bottom = 144.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Nivel 2"
+
+[node name="lvl3" type="Button" parent="." unique_id=793253092]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = 198.0
+offset_right = -296.0
+offset_bottom = 261.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Nivel Final"
+
+[connection signal="pressed" from="lvl1" to="." method="_on_lvl_1_pressed"]
+[connection signal="pressed" from="lvl2" to="." method="_on_lvl_2_pressed"]
+[connection signal="pressed" from="lvl3" to="." method="_on_lvl_3_pressed"]

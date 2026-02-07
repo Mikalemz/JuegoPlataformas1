@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://cjx1y3qnkver3"]
+
+[ext_resource type="Texture2D" uid="uid://6ot4kvj6lis5" path="res://Asset/Rocky Roads/Enemies/snake.png" id="1_16tbv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pox6b"]
+atlas = ExtResource("1_16tbv")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rku0m"]
+atlas = ExtResource("1_16tbv")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmvgn"]
+atlas = ExtResource("1_16tbv")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnn8g"]
+atlas = ExtResource("1_16tbv")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p48en"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pox6b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rku0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmvgn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pnn8g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_16tbv"]
+size = Vector2(27.75, 20)
+
+[node name="Snake" type="RigidBody2D" unique_id=1731610447]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=639354049]
+sprite_frames = SubResource("SpriteFrames_p48en")
+autoplay = "default"
+frame_progress = 0.37092906
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=863978622]
+position = Vector2(-0.875, 7)
+shape = SubResource("RectangleShape2D_16tbv")

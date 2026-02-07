@@ -4,6 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://d626uyyxprmu" path="res://Asset/Farm/Player/Players/Fiery Imp/idle/idle-preview.png" id="2_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://b8gxhastbwuid" path="res://Asset/Farm/Player/Players/Fiery Imp/jump/jump-preview.png" id="3_dewec"]
 [ext_resource type="Texture2D" uid="uid://5qmowp8veqhd" path="res://Asset/Farm/Player/Players/Fiery Imp/walk/walk-preview.png" id="3_gntrk"]
+[ext_resource type="AudioStream" uid="uid://ce3a0jfgeywe2" path="res://Asset/Sounds/jump.wav" id="5_5ixxa"]
+
+[sub_resource type="VisualShader" id="VisualShader_wcqjq"]
+mode = 1
+flags/light_only = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5ixxa"]
+shader = SubResource("VisualShader_wcqjq")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gntrk"]
 atlas = ExtResource("2_kyqiw")
@@ -201,14 +209,19 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_kyqiw"]
 radius = 15.0
 
-[node name="Player" type="CharacterBody2D" unique_id=1684483582 groups=["Player"]]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ixxa"]
+size = Vector2(25.5, 29)
+
+[node name="Player" type="CharacterBody2D" unique_id=1684483582 node_paths=PackedStringArray("area_2d") groups=["Player"]]
+collision_layer = 5
 script = ExtResource("1_kyqiw")
+area_2d = NodePath("Area2D")
+material_rojo_muerte = SubResource("ShaderMaterial_5ixxa")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=81460610]
 sprite_frames = SubResource("SpriteFrames_52ee3")
-animation = &"Jump"
+animation = &"Walk"
 autoplay = "Idle"
-frame_progress = 0.64158535
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=336271081]
 position = Vector2(1, 8)
@@ -216,3 +229,19 @@ shape = SubResource("CircleShape2D_kyqiw")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=726328938]
 zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+position_smoothing_speed = 7.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=234696289]
+stream = ExtResource("5_5ixxa")
+volume_db = -20.259
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1713903058]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1219843818]
+position = Vector2(1.25, 9.5)
+shape = SubResource("RectangleShape2D_5ixxa")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

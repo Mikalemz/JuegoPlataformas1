@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://1vhxqwhbe8mh"]
+
+[ext_resource type="Texture2D" uid="uid://cxk47t5j8x7ji" path="res://Asset/Rocky Roads/Enemies/spikes.png" id="1_3f74f"]
+[ext_resource type="Script" uid="uid://n4r30qsn2vys" path="res://Scripts/collision_shape_2d.gd" id="2_w8d1g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8d1g"]
+atlas = ExtResource("1_3f74f")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fftdn"]
+atlas = ExtResource("1_3f74f")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_laf4u"]
+atlas = ExtResource("1_3f74f")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggpjv"]
+atlas = ExtResource("1_3f74f")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tex8m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8d1g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fftdn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_laf4u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ggpjv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3f74f"]
+size = Vector2(18, 13)
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=1117059210]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1637642718]
+sprite_frames = SubResource("SpriteFrames_tex8m")
+frame_progress = 0.8285872
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1370950448]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_3f74f")
+script = ExtResource("2_w8d1g")

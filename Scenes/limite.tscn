@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://d3a845efmfj0w"]
+
+[ext_resource type="Script" uid="uid://dnj7wq0rkfkm" path="res://Scripts/limite.gd" id="1_uasfw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ttnql"]
+size = Vector2(61, 676)
+
+[node name="Limite" type="Area2D" unique_id=633744503]
+script = ExtResource("1_uasfw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=344742585]
+position = Vector2(20.5, 328)
+shape = SubResource("RectangleShape2D_ttnql")

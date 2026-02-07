@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" uid="uid://ox6pispei6wd" path="res://Scripts/kill_zone.gd" id="1_tuh0n"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wp5gn"]
-size = Vector2(1392, 21)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_d6013"]
+a = Vector2(421, -1)
+b = Vector2(-260, 0)
 
 [node name="KillZone" type="Area2D" unique_id=2138012196]
 script = ExtResource("1_tuh0n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1449401271]
-position = Vector2(692, 0)
-shape = SubResource("RectangleShape2D_wp5gn")
+shape = SubResource("SegmentShape2D_d6013")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

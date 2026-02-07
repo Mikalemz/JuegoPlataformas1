@@ -1,0 +1,21 @@
+[gd_resource type="TileSet" format=3 uid="uid://b7huyj7fisj2w"]
+
+[ext_resource type="Texture2D" uid="uid://nr7pplw2v3gk" path="res://Asset/Rocky Roads/Enemies/wood_stakes.png" id="1_tx8vg"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hppdt"]
+texture = ExtResource("1_tx8vg")
+0:1/0 = 0
+0:1/0/physics_layer_1/polygon_0/points = PackedVector2Array(-6, 2, -8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, 0, -8, -8, 3, -8, 5, -3, 8, 8, -8, 8)
+0:0/0 = 0
+0:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(8, 3, 8, 3, 8, 8, -3, 8)
+1:0/0 = 0
+1:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, 8, -6, 5, -4, 8, -4, 8)
+
+[resource]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+physics_layer_1/collision_layer = 2
+physics_layer_1/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_hppdt")

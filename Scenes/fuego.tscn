@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://ctkuvcufn4q63"]
+
+[ext_resource type="Texture2D" uid="uid://csdetgqxgnhci" path="res://Asset/Rocky Roads/Enemies/fire_big.png" id="1_de8g1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmpmm"]
+atlas = ExtResource("1_de8g1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qd84m"]
+atlas = ExtResource("1_de8g1")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fl8wx"]
+atlas = ExtResource("1_de8g1")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2gdv"]
+atlas = ExtResource("1_de8g1")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vp1e8"]
+atlas = ExtResource("1_de8g1")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tsc8"]
+atlas = ExtResource("1_de8g1")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nxv2c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmpmm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qd84m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fl8wx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2gdv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vp1e8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0tsc8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_de8g1"]
+size = Vector2(21, 18)
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=1091210100]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1166832247]
+sprite_frames = SubResource("SpriteFrames_nxv2c")
+frame_progress = 0.8920409
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1840236785]
+position = Vector2(0.5, 7)
+shape = SubResource("RectangleShape2D_de8g1")

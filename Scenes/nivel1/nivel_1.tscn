@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cq23cirun7dsc"]
+
+[ext_resource type="TileSet" uid="uid://b7huyj7fisj2w" path="res://TileSet/pinchos.tres" id="1_d2lvm"]
+[ext_resource type="Script" uid="uid://bmhc8ktyjd7xg" path="res://Scenes/nivel1/nivel_1.gd" id="1_itjau"]
+[ext_resource type="TileSet" uid="uid://cctc2hyybp6hg" path="res://TileSet/Mazmorra.tres" id="2_gaiun"]
+
+[node name="nivel1" type="Node2D" unique_id=1691391117]
+script = ExtResource("1_itjau")
+
+[node name="pinchos" type="TileMapLayer" parent="." unique_id=1999829974]
+tile_set = ExtResource("1_d2lvm")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=505393020]
+tile_set = ExtResource("2_gaiun")

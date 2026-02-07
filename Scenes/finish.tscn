@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://beer3d1i48gqd"]
+
+[ext_resource type="Texture2D" uid="uid://hqwura54qf2" path="res://Asset/Pixel Adventure 1/Free/Items/Checkpoints/End/End (Idle).png" id="1_nv66a"]
+[ext_resource type="Script" uid="uid://dfqjj7v1pqnvg" path="res://Scripts/finish.gd" id="1_o6pr6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rr27p"]
+size = Vector2(47, 46)
+
+[node name="Finish" type="Area2D" unique_id=1748496577]
+script = ExtResource("1_o6pr6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=982052574]
+texture = ExtResource("1_nv66a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1240896794]
+position = Vector2(-0.5, 10)
+shape = SubResource("RectangleShape2D_rr27p")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

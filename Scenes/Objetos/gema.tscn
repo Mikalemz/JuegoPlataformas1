@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://fdcbhlvrdsbx" path="res://Asset/Rocky Roads/Objects/gem.png" id="1_k2a3l"]
 [ext_resource type="Script" uid="uid://b2rytt2ivmo2o" path="res://Scripts/gemas.gd" id="1_u8e3g"]
+[ext_resource type="AudioStream" uid="uid://c31k8lrprp1m7" path="res://Asset/Farm/sonidos/sonido_moneda.wav" id="3_1koff"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k2a3l"]
 radius = 7.071068
@@ -61,5 +62,9 @@ animation = &"Idle"
 autoplay = "Idle"
 frame = 4
 frame_progress = 0.5813657
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1473085804]
+stream = ExtResource("3_1koff")
+volume_db = -12.156
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
