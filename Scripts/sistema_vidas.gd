@@ -1,6 +1,7 @@
 extends Node
 
 @export var hearts : Array[Node]
+@export var velocidad := 100
 
 var lives = 3
 

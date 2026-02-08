@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://b838smorqaqmp"]
 
 [ext_resource type="Texture2D" uid="uid://dbad36ngcvtqf" path="res://Asset/Rocky Roads/Enemies/slime_blue.png" id="1_04kxg"]
-[ext_resource type="Script" uid="uid://ccifst48yae3m" path="res://Scripts/slime_azul.gd" id="1_nnljx"]
+
+[sub_resource type="GDScript" id="GDScript_04kxg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nnljx"]
 atlas = ExtResource("1_04kxg")
@@ -67,7 +68,7 @@ size = Vector2(22, 14)
 size = Vector2(26, 17)
 
 [node name="SlimeAzul" type="RigidBody2D" unique_id=101346397]
-script = ExtResource("1_nnljx")
+script = SubResource("GDScript_04kxg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1753117455]
 scale = Vector2(1.375, 1.3125001)
