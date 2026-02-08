@@ -64,7 +64,7 @@ animations = [{
 size = Vector2(22, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_04kxg"]
-size = Vector2(24, 16)
+size = Vector2(26, 17)
 
 [node name="SlimeAzul" type="RigidBody2D" unique_id=101346397]
 script = ExtResource("1_nnljx")
@@ -82,7 +82,7 @@ shape = SubResource("RectangleShape2D_nh2p1")
 [node name="Area2D" type="Area2D" parent="." unique_id=276791480]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1430012991]
-position = Vector2(0, 4)
+position = Vector2(1, 4)
 shape = SubResource("RectangleShape2D_04kxg")
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

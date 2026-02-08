@@ -19,6 +19,8 @@
 [ext_resource type="AudioStream" uid="uid://bypay050nk3i" path="res://Asset/Farm/sound/platformer_level03_loop.ogg" id="16_se7y5"]
 [ext_resource type="PackedScene" uid="uid://beer3d1i48gqd" path="res://Scenes/finish.tscn" id="17_uvwjj"]
 [ext_resource type="PackedScene" uid="uid://bpdsd8s3ga78m" path="res://Scenes/final.tscn" id="19_051s1"]
+[ext_resource type="Script" uid="uid://ctrfxrjsaxxyf" path="res://Scripts/pausa.gd" id="20_in4v8"]
+[ext_resource type="Script" uid="uid://c11yu0dae8qb2" path="res://Scripts/sistema_vidas.gd" id="21_mu7lp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rr27p"]
 texture = ExtResource("4_in4v8")
@@ -1524,6 +1526,8 @@ texture = ExtResource("12_5flq6")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_5flq6")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mu7lp"]
+
 [node name="Mundo" type="Node2D" unique_id=1548485830]
 script = ExtResource("1_orbd0")
 niveles = Array[PackedScene]([ExtResource("2_5flq6")])
@@ -1601,3 +1605,73 @@ autoplay = true
 [node name="Finish" parent="." unique_id=1748496577 instance=ExtResource("17_uvwjj")]
 position = Vector2(1573, 559)
 target_level = ExtResource("19_051s1")
+
+[node name="Opciones" type="CanvasLayer" parent="." unique_id=274431384]
+
+[node name="Pausa" type="Node" parent="Opciones" unique_id=1631665871]
+script = ExtResource("20_in4v8")
+
+[node name="Panel" type="Panel" parent="Opciones/Pausa" unique_id=274314801]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Opciones/Pausa/Panel" unique_id=1382603389]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -101.0
+offset_top = 94.0
+offset_right = 102.0
+offset_bottom = 223.5
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "PAUSA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Opciones/Pausa/Panel" unique_id=544174235]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -109.5
+offset_top = -50.5
+offset_right = 109.5
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="seguir" type="Button" parent="Opciones/Pausa/Panel/VBoxContainer" unique_id=644004163]
+process_mode = 3
+modulate = Color(1.0039216, 1.0039216, 1.0039216, 1)
+self_modulate = Color(0.9864842, 0.631637, 0.55405843, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_mu7lp")
+text = "Seguir"
+
+[node name="Menu" type="Button" parent="Opciones/Pausa/Panel/VBoxContainer" unique_id=519378145]
+process_mode = 3
+modulate = Color(1.0039216, 1.0039216, 1.0039216, 1)
+self_modulate = Color(0.9864842, 0.631637, 0.55405843, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_mu7lp")
+text = "Menu"
+
+[node name="SistemaVidas" type="Node" parent="Opciones" unique_id=1566955509 node_paths=PackedStringArray("hearts")]
+unique_name_in_owner = true
+script = ExtResource("21_mu7lp")
+hearts = [NodePath(""), NodePath(""), NodePath("")]
+
+[connection signal="pressed" from="Opciones/Pausa/Panel/VBoxContainer/seguir" to="Opciones/Pausa" method="_on_resumen_pressed"]
+[connection signal="pressed" from="Opciones/Pausa/Panel/VBoxContainer/Menu" to="Opciones/Pausa" method="_on_menu_pressed"]

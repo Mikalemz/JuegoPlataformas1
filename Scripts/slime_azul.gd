@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-@onready var game_manager = %GameManager
+@onready var game_manager = %SistemaVidas
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -12,5 +12,4 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			body.jump()
 		else:
 			print("Quitar 1 vida")
-			body.queue_free()
 			game_manager.decrease_health()
